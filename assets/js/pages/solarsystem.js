@@ -11,7 +11,7 @@ var PageCharts = function() {
 
             if ($dataLive.length > 0)
                 $dataLive = $dataLive.slice(1);
-
+			////dsfdsfsafa
             while ($dataLive.length < 300) {
                 var prev = $dataLive.length > 0 ? $dataLive[$dataLive.length - 1] : 50;
                 var y = prev + Math.random() * 10 - 5;
