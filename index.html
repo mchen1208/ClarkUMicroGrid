@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Clark University MicroGrid System</title>
+        <meta name="description" content="The Clark University MicroGrid System">
+        <meta name="author" content="Po Hu, Mengyi Chen, Xu Lu">
+    
+		<!-- Stylesheets -->
+    	<!-- Web fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+        <!-- solarsystem framework -->            
+        <link rel="stylesheet" id="css-main" href="assets/css/solarsystem.css">
+        <link rel="stylesheet" id="css-sub" href="assets/css/oneui.css">
+        <link rel="stylesheet" href="assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker3.css">
+        <!-- END Stylesheets --> 
+
+            <!-- Page Core JS: jQuery, Bootstrap -->
+        <script src="assets/js/core/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/core/bootstrap.min.js"></script>
+        
+        <!-- Page JS Plugin-->    
+        <script src="assets/js/plugins/flot/jquery.flot.js"></script>
+        <script src="assets/js/plugins/flot/jquery.flot.time.js"></script>
+        <script src="assets/js/plugins/amcharts/amcharts.js"></script>
+        <script src="assets/js/plugins/amcharts/serial.js"></script>
+        <script src="assets/js/plugins/amcharts/themes/light.js"></script>
+        <script src="assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+        <!-- Page JS Code -->
+        <script src="assets/js/pages/solarsystem.js"></script>
+
+    </head>
+
+    <body id="homepage">
+    	<div id="wrapper">
+        	<div id="innerwrapper">
+            	<div id="header">
+                	<a href="http://www.clarku.edu/" id="homelink">Clark University</a>
+                    <a href="index.html" id="tagline"><h1-solar>Clark MicroGrid Solar Charging Station</h1-solar></a>					
+                </div>
+                <div class="css-slideshow">
+                    <figure>
+                        <img src="assets/images/solar-panels.jpg" alt="class-header-css3" width="990" height="370" class="alignnone size-full" /><figcaption>It's a figure caption.</figcaption> 
+                    </figure>
+                    <figure>
+                        <img src="assets/images/newsolar.jpg" alt="class-header-semantics" width="990" height="370" class="alignnone size-full" /><figcaption>The Micro solar plant on the roof of Bistro.</figcaption> 
+                    </figure>                        
+                </div>                 
+                 <div class="block">
+                    <ul class="nav nav-tabs" >
+                        <li class="active">
+                            <a data-toggle="tab" href="#realtime">Real Time</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#intraday">Intraday</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#dailyaverage">Daily Average</a>
+                        </li>
+                    </ul>
+                    <div class="block-content tab-content block-content-full">
+                    	<div class="tab-pane active" id="realtime">
+                            	<div class="row">
+                                	<a class="col-md-4 block block-bordered text-center">
+                                        <div class="block-content bg-success">                                            
+                                            <div class="h5 text-white-op text-uppercase push-5-t">The system is:</div>
+                                            <div class="h1 font-w700 text-white"><span class="h2 text-white-op">GOOD</span></div>
+                                            <br/>
+                                        </div>
+                                    </a>
+                                    <a class="col-md-4 block block-bordered text-center">
+                                        <div class="block-content bg-warning">
+                                            <div class="h5 text-white text-uppercase push-5-t">The current output power is:</div>
+                                            <div class="h1 font-w700 text-white"><span class="h2 text-white-op js-flot-live-info"></span></div>                                            
+                                        	<br/>
+                                        </div>
+                                    </a>
+                                	<a class="col-md-4 block block-bordered text-center">
+                                        <div class="block-content bg-gray-lighter">                                            
+                                            <div class="h5 text-muted text-uppercase push-5-t">Today's generated energy is:</div>
+                                            <div class="h1 font-w700">30.0 <span class="h2 text-muted">kWh</span> </div>
+                                            <br/>
+                                        </div>
+                                    </a>
+                                </div>
+                            <div class="js-flot-live" style="height: 360px;"></div>
+                        </div>
+                        <div class="tab-pane" id="intraday">
+                        	<div id="intradaychartdiv"></div>
+                        	<div id="intradaydatepicker">
+                                <form class="form-horizontal push-10-t" action="#" method="post" onsubmit="return false;">
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-md-offset-3">
+                                            <div class="form-material">
+                                                <input class="js-datepicker form-control" type="text" id="example-datepicker4" name="example-datepicker4" data-date-format="mm/dd/yyyy" placeholder="mm/dd/yyyy">
+                                                <label>Choose a date</label>                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="btn btn-sm btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>                            	
+                        </div>
+                        <div class="tab-pane" id="dailyaverage">
+                            <div id="dailyaveragechartdiv"></div>
+                            <div id="dailyaveragedatepicker">
+                            	<form class="form-horizontal push-10-t" action="#" method="post" onsubmit="return false;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            <div class="input-daterange input-group">
+                                            	<input type="text" class="input-sm form-control" name="start" />
+                                                <span class="input-group-addon">to</span>
+                                                <input type="text" class="input-sm form-control" name="end" />                                             
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button class="btn btn-sm btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                               
+        	</div>            
+        </div>
+    </body>
+</html>
