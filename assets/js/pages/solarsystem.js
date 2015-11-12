@@ -94,16 +94,16 @@ var PageCharts = function() {
 					label: "input",
 					data: []
 			};
-			var data = [ series1, series2 ];
-			//(new Date(2015, 11, 11, 3, 24, 0)).getTime();
+			var updatedata = [ series1, series2 ];
+			//push the update array into the new array
             for (var i = 0; i < $dataLive2[0].length; ++i){
-                data[0].data.push([i*100+timenow, $dataLive2[0][i]]);
-				data[1].data.push([i*100+timenow, $dataLive2[1][i]]);
+                updatedata[0].data.push([i*100+timenow, $dataLive2[0][i]]);
+				updatedata[1].data.push([i*100+timenow, $dataLive2[1][i]]);
 			}
             // Show live chart info
             jQuery('.js-flot-live-info').html(y.toFixed(0) + ' W');
 
-            return data;
+            return updatedata;
         }
 
         var options = {
