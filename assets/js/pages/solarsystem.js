@@ -1,7 +1,7 @@
 var PageCharts = function() {
     // Flot charts, for more examples you can check out http://www.flotcharts.org/flot/examples/
     var initChartsFlot = function(){
-		//pohu merge
+
 		// Get the elements where we will attach the charts
         var $flotLive       = jQuery('.js-flot-live');
 		// Live Chart      
@@ -113,8 +113,8 @@ var PageCharts = function() {
 		    xaxis: {show: true,
 		    	mode:"time",
 					tickSize: [10, "second"],
-					min: timenow,//(new Date(2015, 11, 11, 3, 24, 0)).getTime(),
-					max: timenow+29900,//(new Date(2015, 11, 11, 3, 24, 30)).getTime(),
+					min: timenow,
+					max: timenow+29900,
 					twelveHourClock: false
 		    }
 		};
@@ -125,7 +125,7 @@ var PageCharts = function() {
         	timenow=timenow+100;
         	$chartLive.getAxes().xaxis.options.min=timenow;
         	$chartLive.getAxes().xaxis.options.max=timenow+29900;
-            $chartLive.setData(getRandomData3(timenow));//
+            $chartLive.setData(getRandomData3(timenow));
             $chartLive.setupGrid();
             $chartLive.draw();
             setTimeout(updateChartLive, 100);
