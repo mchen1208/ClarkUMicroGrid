@@ -4,40 +4,7 @@ var PageCharts = function() {
 		
 		// Get the elements where we will attach the charts
         var $flotLive       = jQuery('.js-flot-live');
-		// Live Chart
-        var $dataLive2 = [[],[]];
-		
-
-        function getRandomData3() { // Random data generator
-
-            if ($dataLive2[0].length > 0){
-                $dataLive2[0] = $dataLive2[0].slice(1);
-				$dataLive2[1] = $dataLive2[1].slice(1);
-			}
-
-            while ($dataLive2[0].length < 300) {
-                var prev = $dataLive2[0].length > 0 ? $dataLive2[0][$dataLive2[0].length - 1] : 50;
-                var y = prev + Math.random() * 10 - 5;
-                if (y < 0)
-                    y = 0;
-                if (y > 100)
-                    y = 100;
-                $dataLive2[0].push(y);
-				$dataLive2[1].push(100-y);
-            }
-
-            var res = [[],[]];
-            for (var i = 0; i < $dataLive2[0].length; ++i){
-                res[0].push([i, $dataLive2[0][i]]);
-				res[1].push([i, $dataLive2[1][i]]);
-			}
-
-            // Show live chart info
-            jQuery('.js-flot-live-info').html(y.toFixed(0) + ' W');
-
-            return res;
-        }
-		
+		// Live Chart      
 		var $dataLive = [];
 
         function getRandomData() { // Random data generator
@@ -64,33 +31,10 @@ var PageCharts = function() {
 
             return res;
         }
+
+        var $dataLive2 = [[],[]];
 		
 		function getRandomData2() { // Random data generator
-
-            if ($dataLive.length > 0)
-                $dataLive = $dataLive.slice(1);
-
-            while ($dataLive.length < 300) {
-                var prev = $dataLive.length > 0 ? $dataLive[$dataLive.length - 1] : 50;
-                var y = 100-(prev + Math.random() * 10 - 5);
-                if (y < 0)
-                    y = 0;
-                if (y > 100)
-                    y = 100;
-                $dataLive.push(y);
-            }
-
-            var res = [];
-            for (var i = 0; i < $dataLive.length; ++i)
-                res.push([i, $dataLive[i]]);
-
-            // Show live chart info
-            jQuery('.js-flot-live-info').html(y.toFixed(0) + ' W');
-
-            return res;
-        }
-		
-		function getRandomData4() { // Random data generator
 			if ($dataLive2[0].length > 0){
                 $dataLive2[0] = $dataLive2[0].slice(1);
 				$dataLive2[1] = $dataLive2[1].slice(1);
@@ -126,7 +70,7 @@ var PageCharts = function() {
             return data;
         }
 
-        function getRandomData5(timenow) { // Random data generator
+        function getRandomData3(timenow) { // Random data generator x axis is time
 			if ($dataLive2[0].length > 0){
                 $dataLive2[0] = $dataLive2[0].slice(1);
 				$dataLive2[1] = $dataLive2[1].slice(1);
@@ -174,46 +118,20 @@ var PageCharts = function() {
 					twelveHourClock: false
 		    }
 		};
+
 		var timenow=Date.now(); 
+
         function updateChartLive() { // Update live chart
         	timenow=timenow+100;
         	$chartLive.getAxes().xaxis.options.min=timenow;
         	$chartLive.getAxes().xaxis.options.max=timenow+20000;
-            $chartLive.setData(getRandomData5(timenow));//
+            $chartLive.setData(getRandomData3(timenow));//
             $chartLive.setupGrid();
             $chartLive.draw();
             setTimeout(updateChartLive, 100);
         }
 
-        var $chartLive = jQuery.plot($flotLive,getRandomData5(),options); // Init live chart
-            /*[{ data: getRandomData() }],
-            {
-                series: {
-                    shadowSize: 0
-                },
-                lines: {
-                    show: true,
-                    lineWidth: 2,
-                    fill: true,
-                    fillColor: {
-                        colors: [{opacity: .2}, {opacity: .2}]
-                    }
-                },
-                colors: ['#75b0eb'],
-                grid: {
-                    borderWidth: 0,
-                    color: '#aaaaaa'
-                },
-                yaxis: {
-                    show: true,
-                    min: 0,
-                    max: 110
-                },
-                xaxis: {
-                    show: false
-                }
-            }
-        );*/
+        var $chartLive = jQuery.plot($flotLive,getRandomData3(),options); // Init live chart
 
         updateChartLive(); // Start getting new data
     };

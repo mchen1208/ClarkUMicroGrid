@@ -6,7 +6,7 @@ body {
 	font-family: Verdana, Arial, Helvetica, Sans-Serif; 
 	background-color: #EEE; color: #464645; }
 	
-h1-solar{
+webtitle{
 	position: absolute;
 	margin-top:40px;
 	font-family: Georgia, serif;
@@ -19,11 +19,11 @@ h1-solar{
 #wrapper { 
 	width: 1032px;
 	margin: 0 auto; padding-top: 7px;
-	background: url(/assets2011/images/page_bg.jpg) repeat-y; }
+	/*background: url(/assets2011/images/page_bg.jpg) repeat-y; */}
 	
   #innerwrapper { 
   		width: 1032px; min-height: 610px; padding-bottom: 18px;	
-		background: url(/assets2011/images/page_bottom.jpg) no-repeat bottom center; }
+		/*background: url(/assets2011/images/page_bottom.jpg) no-repeat bottom center; */}
 
 /* alterations to body and wrappers for modal windows */
 	body#modalwindow { background-color: #FFF; margin: 45px 40px 50px 40px; }
@@ -115,66 +115,14 @@ h1-solar{
 		  100% {
 			opacity: 1;
 		  }
+		}		
+
+		#intradaychartdiv {
+			width	: 100%;
+			height	: 500px;
+		}	
+
+		#dailyaveragechartdiv {
+			width	: 100%;
+			height	: 500px;
 		}
-		
-		.block {
-			position: relative;
-		  	width: 990px;
-		  	margin: 0.1em auto .1em auto;
-		    background-color: #fff;
-		}
-		
-		.block-header {
-		  	padding: 1px 20px;
-		}
-		
-		.block-title {
-		  font-size: 15px;
-		  font-weight: 600;
-		  line-height: 1.2;
-		}
-		
-		.block-options {
-  float: right;
-  margin: -3px 0 -3px 15px;
-  padding: 0;
-  height: 24px;
-  list-style: none;
-}
-
-.block-content {
-  margin: 0 auto;
-  padding: 20px 20px 1px;
-  max-width: 100%;
-  overflow-x: visible;
-  -webkit-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-}
-
-.block-content.block-content-left {
-	position: relative;
-  padding-bottom: 20px;
-	width: 70%;
-	float:left
-}
-
-.block-content.block-content-right {
-	position: relative;
-  padding-bottom: 20px;
-	width: 20%;
-	float:left
-}
-
-.block-content.block-content-full {
-  padding-bottom: 20px;
-}
-
-#intradaychartdiv {
-	width	: 100%;
-	height	: 500px;
-}	
-
-#dailyaveragechartdiv {
-	width	: 100%;
-	height	: 500px;
-}
