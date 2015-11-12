@@ -124,7 +124,7 @@ var PageCharts = function() {
         function updateChartLive() { // Update live chart
         	timenow=timenow+100;
         	$chartLive.getAxes().xaxis.options.min=timenow;
-        	$chartLive.getAxes().xaxis.options.max=timenow+20000;
+        	$chartLive.getAxes().xaxis.options.max=timenow+29900;
             $chartLive.setData(getRandomData3(timenow));//
             $chartLive.setupGrid();
             $chartLive.draw();
