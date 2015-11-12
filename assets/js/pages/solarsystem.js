@@ -1,7 +1,7 @@
 var PageCharts = function() {
     // Flot charts, for more examples you can check out http://www.flotcharts.org/flot/examples/
     var initChartsFlot = function(){
-		
+		//pohu merge
 		// Get the elements where we will attach the charts
         var $flotLive       = jQuery('.js-flot-live');
 		// Live Chart      
