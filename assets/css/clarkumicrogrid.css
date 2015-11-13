@@ -1,0 +1,47 @@
+/* CSS Document */
+
+#page-container.clarkumicrogrid {
+	background-color: #EEE;
+	padding-top: 7px;
+	padding-bottom: 18px;
+}
+
+
+.container.clarkumicrogrid {
+	background: #F5F5F5;
+}
+@media (min-width: 1400px) {
+  .container.clarkumicrogrid {
+    width: 83.333%;
+  }
+}
+
+
+
+#header { 
+	width: 100%;
+	position: relative; 
+	margin: 0 auto; 
+	background: #C33; 
+}
+
+a#homelink { 
+	width: 200px; height: 80px; position: absolute; 
+	top: 16px; left: 16px; text-decoration: none; 
+	text-indent: -9999px; overflow: hidden; 
+	background: url(../images/White_Tag_SM.png) no-repeat top left; 		 
+	background-size: 100% 100%;
+}
+
+headertitle{
+	width: 100%;
+	position: relative;
+	margin-top:30px;
+	font-family: Georgia, serif;
+	color:white;
+	font-size: 36px;
+	font-weight: bold;
+	display: inline-block;
+	text-align: center;
+	padding-bottom: 30px;
+}
