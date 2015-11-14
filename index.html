@@ -1,132 +1,137 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>The Clark University MicroGrid System</title>
+	<head>
+		<!-- meta information -->
+		<meta charset="utf-8">
+        <title>Clark University MicroGrid System</title>
         <meta name="description" content="The Clark University MicroGrid System">
         <meta name="author" content="Po Hu, Mengyi Chen, Xu Lu">
-    
-		<!-- Stylesheets -->
-    	<!-- Web fonts -->
+
+        <!-- Stylesheets -->
+        <!-- Web fonts -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
-        <!-- solarsystem framework -->            
-        <link rel="stylesheet" id="css-main" href="assets/css/solarsystem.css">
+		<!-- Frameworks -->
+        <link rel="stylesheet" id="css-main" href="assets/css/clarkumicrogrid.css">
         <link rel="stylesheet" id="css-sub" href="assets/css/oneui.css">
-        <link rel="stylesheet" href="assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker3.css">
-        <!-- END Stylesheets --> 
+        <link rel="stylesheet" href="assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker3.css">        
+        <!-- END Stylesheets -->
 
         <!-- Page Core JS: jQuery, Bootstrap -->
         <script src="assets/js/core/jquery-1.11.2.min.js"></script>
         <script src="assets/js/core/bootstrap.min.js"></script>
-        
+        <script src="assets/js/core/jquery.slimscroll.min.js"></script>
+        <script src="assets/js/core/jquery.scrollLock.min.js"></script>
+        <script src="assets/js/core/jquery.appear.min.js"></script>
+        <script src="assets/js/core/jquery.countTo.min.js"></script>
+        <script src="assets/js/core/jquery.placeholder.min.js"></script>
+        <script src="assets/js/core/js.cookie.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
         <!-- Page JS Plugin-->    
         <script src="assets/js/plugins/flot/jquery.flot.js"></script>
         <script src="assets/js/plugins/flot/jquery.flot.time.js"></script>
+        <script src="assets/js/plugins/flot/jquery.flot.resize.js"></script>
         <script src="assets/js/plugins/amcharts/amcharts.js"></script>
         <script src="assets/js/plugins/amcharts/serial.js"></script>
         <script src="assets/js/plugins/amcharts/themes/light.js"></script>
         <script src="assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
         
         <!-- Page JS Code -->
-        <script src="assets/js/pages/solarsystem.js"></script>
+        <script src="assets/js/pages/clarkumicrogrid.js"></script>
+	</head>
+	<body>
+		<div id="page-container" class="clarkumicrogrid">
+			<div class="container clarkumicrogrid">
+				<!-- Page Header -->
+				<div id="header">
+					<div class="row">
+						<div class="col-lg-2 col-md-3 col-sm-4">
+							<a href="http://www.clarku.edu/" id="homelink">Clark University</a>
+							<br>
+							<br>
+							<br>
+						</div>
+						<div class="col-lg-8 col-md-6 col-sm-6">
+							<div id="headertitle">Clark University MicroGrid System</div>
+						</div>
+					</div>			
+				</div>
+				<!-- END Page Header -->
 
-    </head>
+				<!-- Page Content -->
+				<div class="content">
+					<!-- System Status -->
+					<div class="row">
+						<div class="col-sm-6 col-lg-3">
+	                        <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+	                        	<div class="block-content block-content-full block-content-mini">
+	                        		<div class="h5 push-5-t">The system status is:</div>
+	                            </div>
+	                            <div class="block-content block-content-full bg-success">
+	                                <div class="h1 font-w700 text-white">GOOD</div>                           
+	                            </div>	                            
+	                        </a>
+	                    </div>
+	                    <div class="col-sm-6 col-lg-3">
+	                        <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+	                        	<div class="block-content block-content-full block-content-mini">
+	                        		<div class="h5 push-5-t">Earnings</div>
+	                            </div>
+	                            <div class="block-content block-content-full bg-success">
+	                                <div class="h1 font-w700 text-white"><span class="h2 text-white-op">$</span> 2.980,00</div>                      
+	                            </div>	                            
+	                        </a>
+	                    </div>
+	                    <div class="col-sm-6 col-lg-3">
+	                        <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+	                        	<div class="block-content block-content-full block-content-mini">
+	                        		<div class="h5 push-5-t">Earnings</div>
+	                            </div>
+	                            <div class="block-content block-content-full bg-success">
+	                                <div class="h1 font-w700 text-white"><span class="h2 text-white-op">$</span> 2.980,00</div>                       
+	                            </div>	                            
+	                        </a>
+	                    </div>
+	                    <div class="col-sm-6 col-lg-3">
+	                        <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+	                        	<div class="block-content block-content-full block-content-mini">
+	                        		<div class="h5 push-5-t">Earnings</div>
+	                            </div>
+	                            <div class="block-content block-content-full bg-success">
+	                                <div class="h1 font-w700 text-white"><span class="h2 text-white-op">$</span> 2.980,00</div>
+	                                
+	                            </div>	                            
+	                        </a>
+	                    </div>
+					</div>
+					<!-- END System Status -->
 
-    <body id="homepage">
-    	<div id="wrapper">
-        	<div id="innerwrapper">
-            	<div id="header">
-                	<a href="http://www.clarku.edu/" id="homelink">Clark University</a>
-                    <a href="index.html" id="tagline"><webtitle>Clark MicroGrid Solar Charging Station</webtitle></a>					
-                </div>
-                <div class="css-slideshow">
-                    <figure>
-                        <img src="assets/images/solar-panels.jpg" alt="class-header-css3" width="990" height="370" class="alignnone size-full" /><figcaption>It's a figure caption.</figcaption> 
-                    </figure>
-                    <figure>
-                        <img src="assets/images/newsolar.jpg" alt="class-header-semantics" width="990" height="370" class="alignnone size-full" /><figcaption>The Micro solar plant on the roof of Bistro.</figcaption> 
-                    </figure>                        
-                </div>                 
-                 <div class="block">
-                    <ul class="nav nav-tabs" >
-                        <li class="active">
-                            <a data-toggle="tab" href="#realtime">Real Time</a>
-                        </li>
-                        <li>
-                            <a data-toggle="tab" href="#intraday">Intraday</a>
-                        </li>
-                        <li>
-                            <a data-toggle="tab" href="#dailyaverage">Daily Average</a>
-                        </li>
-                    </ul>
-                    <div class="block-content tab-content block-content-full">
-                    	<div class="tab-pane active" id="realtime">
-                            	<div class="row">
-                                	<a class="col-md-4 block block-bordered text-center">
-                                        <div class="block-content bg-success">                                            
-                                            <div class="h5 text-white-op text-uppercase push-5-t">The system is:</div>
-                                            <div class="h1 font-w700 text-white"><span class="h2 text-white-op">GOOD</span></div>
-                                            <br/>
-                                        </div>
-                                    </a>
-                                    <a class="col-md-4 block block-bordered text-center">
-                                        <div class="block-content bg-warning">
-                                            <div class="h5 text-white text-uppercase push-5-t">The current output power is:</div>
-                                            <div class="h1 font-w700 text-white"><span class="h2 text-white-op js-flot-live-info"></span></div>                                            
-                                        	<br/>
-                                        </div>
-                                    </a>
-                                	<a class="col-md-4 block block-bordered text-center">
-                                        <div class="block-content bg-gray-lighter">                                            
-                                            <div class="h5 text-muted text-uppercase push-5-t">Today's generated energy is:</div>
-                                            <div class="h1 font-w700">30.0 <span class="h2 text-muted">kWh</span> </div>
-                                            <br/>
-                                        </div>
-                                    </a>
+					<!-- Charts -->
+					<div class="row">
+                        <div class="col-md-6">
+                            <div class="block block-themed resizeableblock">
+                                <div class="block-header bg-primary">
+                                	<ul class="block-options">
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                                        </li>
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                                        </li>
+                                    </ul>
+                                    <h3 class="block-title">Primary</h3>
                                 </div>
-                            <div class="js-flot-live" style="height: 360px;"></div>
-                        </div>
-                        <div class="tab-pane" id="intraday">
-                        	<div id="intradaychartdiv"></div>
-                        	<div id="intradaydatepicker">
-                                <form class="form-horizontal push-10-t" action="#" method="post" onsubmit="return false;">
-                                    <div class="form-group">
-                                        <div class="col-md-4 col-md-offset-3">
-                                            <div class="form-material">
-                                                <input class="js-datepicker form-control" type="text" id="example-datepicker4" name="example-datepicker4" data-date-format="mm/dd/yyyy" placeholder="mm/dd/yyyy">
-                                                <label>Choose a date</label>                                
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <button class="btn btn-sm btn-primary" type="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>                            	
-                        </div>
-                        <div class="tab-pane" id="dailyaverage">
-                            <div id="dailyaveragechartdiv"></div>
-                            <div id="dailyaveragedatepicker">
-                            	<form class="form-horizontal push-10-t" action="#" method="post" onsubmit="return false;">
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <div class="input-daterange input-group">
-                                            	<input type="text" class="input-sm form-control" name="start" />
-                                                <span class="input-group-addon">to</span>
-                                                <input type="text" class="input-sm form-control" name="end" />                                             
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <button class="btn btn-sm btn-primary" type="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                <div class="block-content ResizableContainer" style="height:400px;">
+                                    <div class="js-flot-live" style="width: 100%; height:100%; "></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>                                               
-        	</div>            
-        </div>
-    </body>
+                    <!-- END Charts -->
+				</div>
+				<!-- END Page Content -->
+			</div>
+		</div>
+	</body>
 </html>

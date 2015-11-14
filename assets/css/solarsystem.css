@@ -6,7 +6,7 @@ body {
 	font-family: Verdana, Arial, Helvetica, Sans-Serif; 
 	background-color: #EEE; color: #464645; }
 	
-webtitle{
+#webtitle{
 	position: absolute;
 	margin-top:40px;
 	font-family: Georgia, serif;
