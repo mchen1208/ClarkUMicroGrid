@@ -34,6 +34,7 @@
         <script src="assets/js/plugins/flot/jquery.flot.resize.js"></script>
         <script src="assets/js/plugins/amcharts/amcharts.js"></script>
         <script src="assets/js/plugins/amcharts/serial.js"></script>
+        <script src="assets/js/plugins/amcharts/dataloader.js"></script>
         <script src="assets/js/plugins/amcharts/themes/light.js"></script>
         <script src="assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
         
@@ -122,8 +123,37 @@
                                     </ul>
                                     <h3 class="block-title">Real Time</h3>
                                 </div>
-                                <div class="block-content ResizableContainer" style="height:400px;">
-                                    <div class="js-flot-live" style="width: 100%; height:100%; "></div>
+                                <div class="block-content ResizableContainer" style="height:450px;">
+                                    <div class="js-flot-live" ></div>
+                                    <div class="form-group">
+                                        <label class="col-xs-12">Monitoring Parameters</label>
+                                        <div class="col-xs-12">
+                                            <label class="radio-inline" for="Pvvolts">
+                                                <input type="radio" id="Pvvolts" name="monitoring-parameters" value="Pvvolts"> Pvvolts
+                                            </label>
+                                            <label class="radio-inline" for="Pvcur">
+                                                <input type="radio" id="Pvcur" name="monitoring-parameters" value="Pvcur"> Pvcur
+                                            </label>
+                                            <label class="radio-inline" for="PVpow">
+                                                <input type="radio" id="PVpow" name="monitoring-parameters" value="PVpow"> PVpow
+                                            </label>
+                                            <label class="radio-inline" for="OutCur">
+                                                <input type="radio" id="OutCur" name="monitoring-parameters" value="OutCur"> OutCur
+                                            </label>
+                                            <label class="radio-inline" for="OutV">
+                                                <input type="radio" id="OutV" name="monitoring-parameters" value="OutV"> OutV
+                                            </label>
+                                            <label class="radio-inline" for="Outpow">
+                                                <input type="radio" id="Outpow" name="monitoring-parameters" value="Outpow"> Outpow
+                                            </label>
+                                            <label class="radio-inline" for="BattV">
+                                                <input type="radio" id="BattV" name="monitoring-parameters" value="BattV"> BattV
+                                            </label>
+                                            <label class="radio-inline" for="Wind">
+                                                <input type="radio" id="Wind" name="monitoring-parameters" value="Wind"> Wind
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

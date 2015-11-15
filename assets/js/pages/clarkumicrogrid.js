@@ -110,8 +110,6 @@ var PageCharts = function () {
             return updatedata;
         }
 
-        var $dataLive3;
-
         function getTableData(timenow) {
 
             updatedata = [];
@@ -189,7 +187,7 @@ var PageCharts = function () {
         var $resizeableblock = jQuery('.resizeableblock');
 
         $flotLive.resize(function () {
-            $flotLive.css('height', $resizeableblock.height() - 69);
+            $flotLive.css('height', $resizeableblock.height() - 140);
             $chartLive = jQuery.plot($flotLive, getTableData(timenow), options);
         });
     };
@@ -201,14 +199,17 @@ var PageCharts = function () {
             "type": "serial",
             "theme": "light",
             "marginRight": 80,
-            "dataProvider": chartData,
+            //"dataProvider": chartData,
+            "dataLoader": {
+                "url": "assets/php/query.php"
+            },
             "valueAxes": [{
                 "position": "left",
                 "title": "Output Power"
             }],
             "graphs": [{
                 "id": "g1",
-                "valueField": "output",
+                "valueField": "PVpow",
                 "balloonText": "<div style='margin:5px; font-size:19px;'><b>[[value]] W</b></div>"
             }, {
                 "id": "g2",
@@ -229,10 +230,11 @@ var PageCharts = function () {
                 "color": "#AAAAAA"
             },
             "chartCursor": {
-                "categoryBalloonDateFormat": "JJ:NN, DD MMMM",
+                "categoryBalloonDateFormat": "JJ:NN, DD MM YYYY",
                 "cursorPosition": "mouse"
             },
-            "categoryField": "date",
+            "categoryField": "date_time",
+            "dataFormat": "YYYY-MM-DD JJ:NN:SS",
             "categoryAxis": {
                 "minPeriod": "mm",
                 "parseDates": true
