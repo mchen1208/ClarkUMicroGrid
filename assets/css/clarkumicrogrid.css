@@ -45,3 +45,13 @@ a#homelink {
 	text-align: center;
 	padding-bottom: 30px;
 }
+
+#intradaychartdiv {
+	width	: 100%;
+	height	: 500px;
+}	
+
+#dailyaveragechartdiv {
+	width	: 100%;
+	height	: 500px;
+}

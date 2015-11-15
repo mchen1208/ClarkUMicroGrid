@@ -2,5 +2,5 @@
   $hn='localhost';
   $db='clarku_microgrid';
   $un='user';
-  $pw='password';
+  $pw='12345678';
 ?>
